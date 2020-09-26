@@ -1,11 +1,12 @@
 import React from "react";
 import {Link} from "react-router-dom";
-
+import AuthOptions from "../auth/AuthOptions"
 
 export default function Header() {
 	return (
-		<div>
-	<Link to="/">Web panel </Link>
-		</div>
+		<header id="header">
+	<Link to="/"><h1 className ="title">Web panel</h1></Link>
+	<AuthOptions />
+		</header>
 		)
 }
