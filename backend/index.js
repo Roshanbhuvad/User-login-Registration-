@@ -20,4 +20,7 @@ mongoose.connect(process.env.MONGODB_CONNECTION_STRING, {
     useUnifiedTopology: true
 }, (err) => {
     console.log("MongoDB connection Established!");
-})
+});
+
+// set up routes
+app.use("/users", require("./routes/userRouter"));
