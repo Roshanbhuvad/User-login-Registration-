@@ -30,7 +30,7 @@ export default function Register() {
 				user: loginRes.data.user,
 			});
 			localStorage.setItem("auth-token", loginRes.data.token);
-			history.push("/");
+			history.push("/login");
 	} catch (err) {
 		err.response.data.msg && setError(err.response.data.msg);
 	}
@@ -40,6 +40,9 @@ export default function Register() {
  	return (
 		<div className="page">
 			<h2>Register</h2>
+			{error && (
+        <ErrorNotice message={error} clearError={() => setError(undefined)} />
+      	)}
 			<form className="form" onSubmit={submit}>
 				<label htmlFor="register-email">Email: </label>
 				<input id="register-email" type="email" onChange={(e) => setEmail(e.target.value)} />

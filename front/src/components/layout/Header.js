@@ -5,7 +5,7 @@ import AuthOptions from "../auth/AuthOptions"
 export default function Header() {
 	return (
 		<header id="header">
-			<Link to="/"><h1 className ="title">Web panel</h1></Link>
+			<Link to="/"><h1 className ="title">Image Gallery</h1></Link>
 			<AuthOptions />
 		</header>
 	);
