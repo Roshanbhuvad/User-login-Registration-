@@ -15,7 +15,11 @@ export default function Home() {
           <h2>You are not logged in</h2>
           <Link to="/login">Login</Link>
         </>
+				
       )}
+      <div className="footer">
+      <p><a target = "_blank" href = "www.github.com"> User Profile App using React, axios and Node.JS</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a target = "_blank" href = "https://github.com/Roshanbhuvad/User-login-Registration-">View the source on GitHub</a></p>
+    </div>
     </div>
   );
 }

@@ -125,7 +125,13 @@ background-color: #e02525;
 	align-items: center;
 	background-color: #f8d6d6;
 }
-
+.footer {
+	margin-top: 400px;
+	border: 1px solid #000000;
+	border-radius:8px; 
+	text-align: center;
+	color: #000000;
+}
 .error-notice button {
 	width: 20px;
 	height: 20px;
