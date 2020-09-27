@@ -6,7 +6,6 @@ import ErrorNotice from "../misc/ErrorNotice";
 
 export default function Login() {
 	const [email, setEmail] = useState();
-	const [phoneNumber, setPhoneNumber] = useState();
 	const [password, setPassword] = useState();
 	const [error, setError] = useState();
 
@@ -14,9 +13,9 @@ export default function Login() {
 	const history = useHistory();
 
 	const submit = async(e) => {
-	try {
 		e.preventDefault();
-
+	try {
+		
 		const loginUser = {email,password};
 		const loginRes = await Axios.post("http://localhost:5000/users/login", loginUser);
 		
@@ -34,8 +33,6 @@ export default function Login() {
 	return (
 		<div className="page">
 			<h2>Login</h2>
-			{error && ( <ErrorNotice message={error} clearError{() => setError(undefined)} />
-			)}
 			<form className="form" onSubmit={submit}>
 				<label htmlFor="login-email">Email: </label>
 				<input id="login-email" type="email" onChange={(e) => setEmail(e.target.value)} />
@@ -47,5 +44,5 @@ export default function Login() {
 				<input type="submit" value="Login" />
 			</form>
 		</div>
-		)
+	);
 }

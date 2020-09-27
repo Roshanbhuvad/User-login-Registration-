@@ -1,18 +1,21 @@
-import React, {useEffect, useContext} from "react";
+import React, {useContext} from "react";
+import {Link, useHistory} from "react-router-dom";
 import UserContext from "../../context/UserContext";
-import {useHistory} from "react-router-dom";
+
 
 export default function Home() {
 	const {userData} = useContext(UserContext);
-	
-	useEffect(() => {
-		if(!userData.user)
 
-
-	}, [])
 	return (
 		<div className="page">
-			Home
-		</div>
-		)
+      {userData.user ? (
+        <h1>Welcome {userData.user.displayName}</h1>
+      ) : (
+        <>
+          <h2>You are not logged in</h2>
+          <Link to="/login">Login</Link>
+        </>
+      )}
+    </div>
+  );
 }

@@ -1,8 +1,8 @@
 const router = require("express").Router();
-const User = require("../models/userModel");
 const jwt = require("jsonwebtoken");
 const auth = require("../middleware/auth");
 const bcrypt = require("bcryptjs");
+const User = require("../models/userModel");
 
 router.post("/register", async (req, res) => {
   try {
@@ -122,8 +122,7 @@ router.get("/", auth, async(req, res) => {
   const user = await User.findById(req.user);
   res.json({
     displayName: user.displayName,
-    email: user.email,
-    id: user._id
+    id: user._id,
   });
 });
 
