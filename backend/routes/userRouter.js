@@ -118,4 +118,14 @@ router.post("/tokenIsValid", async (req, res) => {
     });
   }
 });
+
+router.get("/", auth, async(req, res) => {
+  const user = await User.findById(req.user);
+  res.json({
+    displayName: user.displayName,
+    email: user.email,
+    id: user._id
+  });
+});
+
 module.exports = router;
