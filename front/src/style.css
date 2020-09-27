@@ -37,6 +37,9 @@ body {
 	font-family: "Roboto", sans-serif;
 }
 
+.page {
+	padding: 1rem;
+}
 /* header */
 #header {
 	height: 50px;

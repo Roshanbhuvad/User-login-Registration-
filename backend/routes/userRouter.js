@@ -6,10 +6,10 @@ const bcrypt = require("bcryptjs");
 
 router.post("/register", async (req, res) => {
   try {
-    let { email, phone, password, passwordCheck, displayName } = req.body;
+    let { email, phoneNumber, password, passwordCheck, displayName } = req.body;
 
     //validate
-    if (!email || !phone || !password || !passwordCheck)
+    if (!email || !phoneNumber || !password || !passwordCheck)
       return res.status(400).json({
         msg: "Not all fields have been entered.",
       });
@@ -36,7 +36,7 @@ router.post("/register", async (req, res) => {
     const newUser = new User({
       email,
       password: passwordHash,
-      phone,
+      phoneNumber,
       displayName,
     });
     const savedUser = await newUser.save();
@@ -81,7 +81,6 @@ router.post("/login", async (req, res) => {
       user: {
         id: user._id,
         displayName: user.displayName,
-        email: user.email,
       },
     });
   } catch (err) {
